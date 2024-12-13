@@ -14,5 +14,5 @@ def post_request(request):
     return render(request, 'repairs/post_request.html', {'form': form})
 
 def recent_requests(request):
-    requests = RepairRequest.objects.all().order_by('-created_at')
+    requests = RepairRequest.objects.all().order_by('-created_at')[:10]
     return render(request, 'repairs/recent_requests.html', {'requests': requests})

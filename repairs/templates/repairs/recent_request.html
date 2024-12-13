@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recent Requests</title>
 </head>
 <body>
 {% extends 'base.html' %}
 {% block content %}
 <h2>Recent Repair Requests</h2>
-<ul class="list-group">
+<ul>
     {% for request in requests %}
-    <li class="list-group-item">
+    <li>
         <strong>{{ request.name }}</strong> - {{ request.category }}<br>
         {{ request.description }}<br>
         <small>{{ request.created_at|date:"F j, Y, g:i a" }}</small>
